@@ -8,14 +8,15 @@ using System.Web.Mvc;
 
 namespace Model1.Models
 {
+    /* Film:
+     * IDFilm - int - cheie primara 
+     * Denumire - string
+     */
     public class Film
     {
-        private FilmDBContext db = new FilmDBContext();
-    }
+        [Key]
+        public int IDFilm { get; set; }
 
-    public class FilmDBContext : DbContext
-    {
-        public FilmDBContext() : base("DBConnectionString") { }
-        public DbSet<Film> Filme { get; set; }
+        public string Denumire { get; set; }
     }
 }
